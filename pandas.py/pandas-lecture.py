@@ -23,3 +23,20 @@ import pandas as pd
 # df.to_json('output.json',index=False) # JSON file
 
 
+# Exploring data: why?
+# 1.understand the dataset
+# 2.identify the problems
+# 3.plan next steps
+
+
+# head(n) and tail(n): if not n: 5 default
+
+# df=pd.read_csv('sample.csv')
+# print(df.head(7)) # first seven rows: index 0-6
+# print(df.tail()) # last 5 rows
+
+# info()-tells no of row and column,column name,dtype,non null counts,memory use of dataframe
+
+# df=pd.read_csv('sample.csv')
+# print('info of dataset:')
+# print(df.info())

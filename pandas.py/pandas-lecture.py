@@ -54,3 +54,40 @@ import pandas as pd
 # print(df)
 # print('descriptive statistics')
 # print('\n',df.describe())
+
+
+# shapes and columns
+# how big is your dataset? (row,column)
+# what are the names of columns?
+
+# print('shape:',df.shape)
+# print('column names:',df.columns)
+
+
+# [] and boolean conditioning
+
+# 1.select specific columns
+# column=df['column name'] # 1 column
+# column=df['column 1','column 2','column 3'] # ... column n
+
+
+# for example
+# name=df['name']
+# print('name column:')
+# print(name)
+
+# subset=df[['name','salary']]
+# print(subset)
+
+
+# filter rows
+# filtered_rows=df[df['column name']>5000]
+# or
+# for multiple conditions, df[condition1 & condition2]
+
+# example: select rows where salary > 50000
+# high_salary = df[(df['salary'] > 50000) & (df['age'] > 30)]
+# print('\nHigh salary rows:')
+# print(high_salary)
+
+

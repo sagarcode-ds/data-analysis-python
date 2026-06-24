@@ -1,13 +1,13 @@
-import pandas as pd
+# import pandas as pd
 # Challenge 1 — Build and Save:
 # Create a DataFrame with 5 students: columns student_name, marks, grade (A/B/C). Save it as both a CSV and a JSON file. Then reload the CSV and print the first 3 rows using head()
 
-data={
-    'student name':['sagar','alice','bob','riya','priya'],
-    'marks':[84,72,69,76,88],
-    'grade':['A','B','C','B','A']}
+# data={
+#     'student name':['sagar','alice','bob','riya','priya'],
+#     'marks':[84,72,69,76,88],
+#     'grade':['A','B','C','B','A']}
 
-df=pd.DataFrame(data)
+# df=pd.DataFrame(data)
 # print(df)
 # df.to_csv('output.csv',index=False)
 # df.to_json('output.json')

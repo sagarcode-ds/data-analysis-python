@@ -40,3 +40,17 @@ import pandas as pd
 # df=pd.read_csv('sample.csv')
 # print('info of dataset:')
 # print(df.info())
+
+
+# describing dataframe
+
+# data={'name':['ram','shyam','ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
+#       'age':[10,20,30,40,50,60,25,32],
+#       'salary':[50000,40000,45000,52000,49000,70000,48000,58000],
+#       'performance score':[85,90,78,92,88,95,80,89]
+#       }
+
+# df=pd.DataFrame(data)
+# print(df)
+# print('descriptive statistics')
+# print('\n',df.describe())

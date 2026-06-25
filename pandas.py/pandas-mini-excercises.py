@@ -69,11 +69,11 @@ data = {
 # Select only the Name and Salary columns from the DataFrame and display the result.
 # Then select Name, Department, and Score — display that too.
 
-result=df[['Name','Salary']]
-print(result)
+# result=df[['Name','Salary']]
+# print(result)
 
-result2=df[['Name','Department','Score']]
-print('\n',result2)
+# result2=df[['Name','Department','Score']]
+# print('\n',result2)
 
 
 # Problem 5
@@ -81,9 +81,9 @@ print('\n',result2)
 # After filtering, answer: how many employees qualify?
 # (Hint: .shape or len() can help)
 
-filtered_rows=df[df['Salary']>50000]
-print('\n',filtered_rows)
-print(len(filtered_rows))
+# filtered_rows=df[df['Salary']>50000]
+# print('\n',filtered_rows)
+# print(len(filtered_rows))
 
 
 
@@ -96,8 +96,8 @@ print(len(filtered_rows))
 # Display only their Name, Department, and Score.
 
 
-filtered=df[(df['Department']=='IT') & (df['Score']>80)]
+# filtered=df[(df['Department']=='IT') & (df['Score']>80)]
 
 
-filtered2=filtered[['Name','Department','Score']]
-print(filtered2)
+# filtered2=filtered[['Name','Department','Score']]
+# print(filtered2)

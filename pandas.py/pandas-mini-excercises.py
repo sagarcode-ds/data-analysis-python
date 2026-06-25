@@ -117,23 +117,23 @@ data = {
 
 # Confirm both give the same result.
 
-filtered=df[(df['Department']=='HR') | (df['Department']=='Finance')]
-print(filtered)
+# filtered=df[(df['Department']=='HR') | (df['Department']=='Finance')]
+# print(filtered)
 
-filtered2 = df[df['Department'].isin(['Finance', 'HR'])]
-print('\n',filtered2)
+# filtered2 = df[df['Department'].isin(['Finance', 'HR'])]
+# print('\n',filtered2)
 
-print(filtered.equals(filtered2))  # same
+# print(filtered.equals(filtered2))  # same
 
 
 # Problem 8
 # Find all employees who are NOT from 'Butwal'.
 # Display their Name and City only.
 
-not_butwal=df[~(df['City']=='Butwal')]
+# not_butwal=df[~(df['City']=='Butwal')]
 
-name_city=not_butwal[['Name','City']]
-print(name_city)
+# name_city=not_butwal[['Name','City']]
+# print(name_city)
 
 # Problem 9
 # Find employees whose Salary is between 40,000 and 65,000 (inclusive).
@@ -141,6 +141,6 @@ print(name_city)
 # How many employees fall in this range?
 
 
-mid_salary=df[df['Salary'].between(40000,65000)]
-print(mid_salary)
-print(len(mid_salary))
+# mid_salary=df[df['Salary'].between(40000,65000)]
+# print(mid_salary)
+# print(len(mid_salary))

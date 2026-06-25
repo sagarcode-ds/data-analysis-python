@@ -144,3 +144,59 @@ data = {
 # mid_salary=df[df['Salary'].between(40000,65000)]
 # print(mid_salary)
 # print(len(mid_salary))
+
+# Level 4 — Index Operations & File Round-Trip
+
+# Problem 10
+# Take your DataFrame and:
+
+
+# Set 'Name' as the index — print it
+# Reset the index back to default integers — print it
+# In your own words: what changed visually between step 1 and step 2?
+
+df_indexed = df.set_index('Name')
+print(df_indexed)
+
+df_reset = df_indexed.reset_index()
+print('\n')
+print(df_reset)
+
+
+# Problem 11
+# Save the DataFrame to a JSON file (employees.json).
+# Read it back using read_json.
+# Use info() on both the original and the re-loaded version.
+# Are the dtypes exactly the same? If not, which column changed and why do you think that happened?
+
+df.to_json('employees.json')
+content=pd.read_json('employees.json')
+print(content)
+
+df.info()
+content.info()
+print(df.dtypes.equals(content.dtypes)) 
+
+
+# Level 5 — Combined Challenge
+
+# Problem 12
+# This one combines everything. Write a single filter expression (no intermediate variables except the final result) that returns employees who:
+
+# Are in the 'IT' or 'Finance' department
+# Have a Salary between 35,000 and 70,000 (inclusive)
+# Are NOT from 'Kathmandu'
+
+# From that filtered result, display only Name, Department, City, and Salary.
+# Bonus (new method to look up): sort the final result by Salary from highest to lowest using sort_values()
+
+
+result = (df[(df['Department'].isin(['IT', 'Finance'])) & 
+             (df['Salary'] >= 35000) & 
+             (df['Salary'] <= 70000) & 
+             (df['City'] != 'Kathmandu')]
+          [['Name', 'Department', 'City', 'Salary']]
+          .sort_values('Salary', ascending=False))
+
+print("Filtered result (IT/Finance, Salary 35K-70K, not Kathmandu, sorted by Salary desc):")
+print(result)

@@ -23,12 +23,12 @@ data = {
 # Then read it back from the CSV file.
 # Print the first 4 rows and the last 3 rows.
 
-# df = pd.DataFrame(data)
-# df.to_csv('employees.csv',index=False)
-# content=pd.read_csv('employees.csv')
-# print(content)
-# print(content.head(4))  
-# print(content.tail(3)) 
+df = pd.DataFrame(data)
+df.to_csv('employees.csv',index=False)
+content=pd.read_csv('employees.csv')
+print(content)
+print(content.head(4))  
+print(content.tail(3)) 
 
 
 # Problem 2
@@ -39,10 +39,10 @@ data = {
 # info() output
 # describe() output
 
-# print('Shape of the DataFrame:',content.shape)
-# print('Column names:',content.columns)
-# print(content.info())
-# print('\n',content.describe())
+print('Shape of the DataFrame:',content.shape)
+print('Column names:',content.columns)
+print(content.info())
+print('\n',content.describe())
 
 
 # Problem 3
@@ -56,10 +56,10 @@ data = {
 # What do you notice about which columns have few unique values vs many?
 
 
-# print('data types of each columns')
-# print(content.dtypes)
-# print(content.nunique())
-# print(content['City'].value_counts())
+print('data types of each columns')
+print(content.dtypes)
+print(content.nunique())
+print(content['City'].value_counts())
 
 
 
@@ -69,11 +69,11 @@ data = {
 # Select only the Name and Salary columns from the DataFrame and display the result.
 # Then select Name, Department, and Score — display that too.
 
-# result=df[['Name','Salary']]
-# print(result)
+result=df[['Name','Salary']]
+print(result)
 
-# result2=df[['Name','Department','Score']]
-# print('\n',result2)
+result2=df[['Name','Department','Score']]
+print('\n',result2)
 
 
 # Problem 5
@@ -81,9 +81,9 @@ data = {
 # After filtering, answer: how many employees qualify?
 # (Hint: .shape or len() can help)
 
-# filtered_rows=df[df['Salary']>50000]
-# print('\n',filtered_rows)
-# print(len(filtered_rows))
+filtered_rows=df[df['Salary']>50000]
+print('\n',filtered_rows)
+print(len(filtered_rows))
 
 
 
@@ -96,11 +96,11 @@ data = {
 # Display only their Name, Department, and Score.
 
 
-# filtered=df[(df['Department']=='IT') & (df['Score']>80)]
+filtered=df[(df['Department']=='IT') & (df['Score']>80)]
 
 
-# filtered2=filtered[['Name','Department','Score']]
-# print(filtered2)
+filtered2=filtered[['Name','Department','Score']]
+print(filtered2)
 
 
 
@@ -117,23 +117,23 @@ data = {
 
 # Confirm both give the same result.
 
-# filtered=df[(df['Department']=='HR') | (df['Department']=='Finance')]
-# print(filtered)
+filtered=df[(df['Department']=='HR') | (df['Department']=='Finance')]
+print(filtered)
 
-# filtered2 = df[df['Department'].isin(['Finance', 'HR'])]
-# print('\n',filtered2)
+filtered2 = df[df['Department'].isin(['Finance', 'HR'])]
+print('\n',filtered2)
 
-# print(filtered.equals(filtered2))  # same
+print(filtered.equals(filtered2))  # same
 
 
 # Problem 8
 # Find all employees who are NOT from 'Butwal'.
 # Display their Name and City only.
 
-# not_butwal=df[~(df['City']=='Butwal')]
+not_butwal=df[~(df['City']=='Butwal')]
 
-# name_city=not_butwal[['Name','City']]
-# print(name_city)
+name_city=not_butwal[['Name','City']]
+print(name_city)
 
 # Problem 9
 # Find employees whose Salary is between 40,000 and 65,000 (inclusive).
@@ -141,9 +141,9 @@ data = {
 # How many employees fall in this range?
 
 
-# mid_salary=df[df['Salary'].between(40000,65000)]
-# print(mid_salary)
-# print(len(mid_salary))
+mid_salary=df[df['Salary'].between(40000,65000)]
+print(mid_salary)
+print(len(mid_salary))
 
 # Level 4 — Index Operations & File Round-Trip
 

@@ -23,12 +23,12 @@ data = {
 # Then read it back from the CSV file.
 # Print the first 4 rows and the last 3 rows.
 
-df = pd.DataFrame(data)
-df.to_csv('employees.csv',index=False)
-content=pd.read_csv('employees.csv')
-print(content)
-print(content.head(4))  
-print(content.tail(3)) 
+# df = pd.DataFrame(data)
+# df.to_csv('employees.csv',index=False)
+# content=pd.read_csv('employees.csv')
+# print(content)
+# print(content.head(4))  
+# print(content.tail(3)) 
 
 
 # Problem 2
@@ -39,10 +39,10 @@ print(content.tail(3))
 # info() output
 # describe() output
 
-print('Shape of the DataFrame:',content.shape)
-print('Column names:',content.columns)
-print(content.info())
-print('\n',content.describe())
+# print('Shape of the DataFrame:',content.shape)
+# print('Column names:',content.columns)
+# print(content.info())
+# print('\n',content.describe())
 
 
 # Problem 3
@@ -56,7 +56,8 @@ print('\n',content.describe())
 # What do you notice about which columns have few unique values vs many?
 
 
-print('data types of each columns')
-print(content.dtypes)
-print(content.nunique())
-print(content['City'].value_counts())
+# print('data types of each columns')
+# print(content.dtypes)
+# print(content.nunique())
+# print(content['City'].value_counts())
+

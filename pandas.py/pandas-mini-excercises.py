@@ -101,3 +101,46 @@ data = {
 
 # filtered2=filtered[['Name','Department','Score']]
 # print(filtered2)
+
+
+
+# Level 3 — OR, NOT, isin, between
+
+# Problem 7
+# Find all employees in either the 'HR' or 'Finance' department.
+# Solve this two ways:
+
+
+# Once using |
+# Once using .isin()
+
+
+# Confirm both give the same result.
+
+filtered=df[(df['Department']=='HR') | (df['Department']=='Finance')]
+print(filtered)
+
+filtered2 = df[df['Department'].isin(['Finance', 'HR'])]
+print('\n',filtered2)
+
+print(filtered.equals(filtered2))  # same
+
+
+# Problem 8
+# Find all employees who are NOT from 'Butwal'.
+# Display their Name and City only.
+
+not_butwal=df[~(df['City']=='Butwal')]
+
+name_city=not_butwal[['Name','City']]
+print(name_city)
+
+# Problem 9
+# Find employees whose Salary is between 40,000 and 65,000 (inclusive).
+# Use .between().
+# How many employees fall in this range?
+
+
+mid_salary=df[df['Salary'].between(40000,65000)]
+print(mid_salary)
+print(len(mid_salary))

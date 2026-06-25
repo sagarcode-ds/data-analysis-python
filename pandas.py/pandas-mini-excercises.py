@@ -61,3 +61,43 @@ data = {
 # print(content.nunique())
 # print(content['City'].value_counts())
 
+
+
+# Level 2 — Column Selection & Basic Filtering
+
+# Problem 4
+# Select only the Name and Salary columns from the DataFrame and display the result.
+# Then select Name, Department, and Score — display that too.
+
+result=df[['Name','Salary']]
+print(result)
+
+result2=df[['Name','Department','Score']]
+print('\n',result2)
+
+
+# Problem 5
+# Filter and display only employees whose Salary is greater than 50,000.
+# After filtering, answer: how many employees qualify?
+# (Hint: .shape or len() can help)
+
+filtered_rows=df[df['Salary']>50000]
+print('\n',filtered_rows)
+print(len(filtered_rows))
+
+
+
+# Problem 6
+# Filter employees who satisfy BOTH conditions:
+
+# Department is 'IT'
+# Score is greater than 80
+
+# Display only their Name, Department, and Score.
+
+
+filtered=df[(df['Department']=='IT') & (df['Score']>80)]
+
+
+filtered2=filtered[['Name','Department','Score']]
+print(filtered2)

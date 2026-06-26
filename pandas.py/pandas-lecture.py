@@ -131,21 +131,56 @@ import pandas as pd
 # print(df)
 
 
-data={'name':['ram','shyam','ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
-      'age':[10,20,30,40,50,60,25,32],
-      'salary':[50000,40000,45000,52000,49000,70000,48000,58000],
-      'performance score':[85,90,78,92,88,95,80,89]
-      }
+# data={'name':['ram','shyam','ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
+#       'age':[10,20,30,40,50,60,25,32],
+#       'salary':[50000,40000,45000,52000,49000,70000,48000,58000],
+#       'performance score':[85,90,78,92,88,95,80,89]
+#       }
 
-df=pd.DataFrame(data)
-print('original')
-print(df)
-print('\n')
+# df=pd.DataFrame(data)
+# print('original')
+# print(df)
+# print('\n')
 
 # removing columns
 # df.drop(columns=['column name'],inplace=True/False) 
 
-df.drop(columns=['performance score','age'],inplace=True)
-print('modified')
-print(df)
+# df.drop(columns=['performance score','age'],inplace=True)
+# print('modified')
+# print(df)
+
+
+
+# handling missing data
+# Nan,None
+# isnull()
+
+# data={'name':['ram',None,'ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
+#       'age':[10,None,30,40,50,60,25,32],
+#       'salary':[50000,None,45000,52000,49000,70000,48000,58000],
+#       'performance score':[85,None,78,92,88,95,80,89]}
+
+# df=pd.DataFrame(data)
+# print(df)
+# print('\n')
+# print((df.isnull()))
+# print(~(df.isnull()))
+
+# to know how ,any items are missing in each column
+# print(df.isnull().sum())
+
+
+# removing rows and columns items
+# df.dropna(axis=0/1, inplace=True)
+
+# df.dropna(inplace=True)
+# print(df)
+
+
+# fill missing values with a meaningful value per column
+
+# df['age'] = df['age'].fillna(df['age'].mean())
+# df['salary'] = df['salary'].fillna(df['salary'].mean())
+# print(df)
+
 

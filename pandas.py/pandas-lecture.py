@@ -91,3 +91,61 @@ import pandas as pd
 # print(high_salary)
 
 
+
+
+#  advanced pandas 
+
+
+# data={'name':['ram','shyam','ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
+#       'age':[10,20,30,40,50,60,25,32],
+#       'salary':[50000,40000,45000,52000,49000,70000,48000,58000],
+#       'performance score':[85,90,78,92,88,95,80,89]
+#       }
+
+# df=pd.DataFrame(data)
+# print(df)
+
+# modifying items in dataframe
+# df['bonus']=df['salary']*0.1
+# print(df)
+
+# using insert method 
+# df.insert(column no,column name,data)
+
+# df.insert(0,'employee id',[10,20,30,40,50,60,70,80])
+# print(df)
+
+
+
+# updating values
+# df.los[row index,column name] = new value
+# df.loc used when modifying an specific item
+
+# updating salary of ram
+# df.loc[0,'salary'] = 55000
+# print(df) # modified
+
+# increasing all salary by 5 percent
+# df['salary'] = df['salary'] * 1.05
+# print('updated salary:')
+# print(df)
+
+
+data={'name':['ram','shyam','ghanshyam','dhanshyam','aditi','jagdish','raj','simran'],
+      'age':[10,20,30,40,50,60,25,32],
+      'salary':[50000,40000,45000,52000,49000,70000,48000,58000],
+      'performance score':[85,90,78,92,88,95,80,89]
+      }
+
+df=pd.DataFrame(data)
+print('original')
+print(df)
+print('\n')
+
+# removing columns
+# df.drop(columns=['column name'],inplace=True/False) 
+
+df.drop(columns=['performance score','age'],inplace=True)
+print('modified')
+print(df)
+

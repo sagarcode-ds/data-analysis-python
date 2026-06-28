@@ -91,3 +91,67 @@ print('\n')
 
 
 
+# Problem 4 — Identify Missing Values
+# (Work on the original employees DataFrame — with NaN still present.)
+# a) Print the count of missing values per column.
+# b) Print the percentage of missing values per column.
+# (Hint: divide isnull().sum() by len(df), multiply by 100, round to 2 decimals)
+# c) Print only the rows that contain at least one missing value.
+# (Hint: df[df.isnull().any(axis=1)])
+
+
+
+employees = pd.DataFrame({
+    'emp_id':     [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+    'name':       ['Sagar', 'Alice', 'Bob', 'Charlie', 'Diana',
+                   'Evan',  'Fiona', 'George', 'Hina', 'Iqbal'],
+    'dept':       ['IT', 'HR', 'IT', 'Finance', 'HR',
+                   'Finance', 'IT', 'HR', 'Finance', 'IT'],
+    'city':       ['Butwal', 'Kathmandu', 'Bharatpur', 'Pokhara', 'Butwal',
+                   'Kathmandu', 'Bharatpur', 'Pokhara', 'Butwal', 'Kathmandu'],
+    'salary':     [30000, 55000, None, 70000, 45000,
+                   80000, None,  65000, 52000, 48000],
+    'score':      [85, 90, 78, None, 88, 95, 80, 89, None, 83],
+    'experience': [1, 4, 2, 8, 5, 10, 2, 7, 4, 3]
+})
+
+
+
+no_missingValues=employees.isnull().sum()
+print(no_missingValues)
+print(round(no_missingValues/len(employees) * 100, 2))
+print(employees[employees.isnull().any(axis=1)])
+
+
+
+
+# Problem 5 — Fix Missing Values
+# a) Fill missing salary with the mean of the salary column.
+# b) Fill missing score using linear interpolation.
+# c) After both fills, confirm no NaN remain using isnull().sum().
+# d) On a SEPARATE copy of the original employees DataFrame, use
+# dropna(subset=['salary']) instead of filling. How many rows survive?
+# How many did you lose?
+# e) Which approach is better for this dataset — filling or dropping? State your reason in a comment.
+
+original = employees.copy()
+
+employees['salary'] = employees['salary'].fillna(employees['salary'].mean())
+print(employees)
+
+employees['score'] = employees['score'].interpolate(method='linear')
+print(employees)
+print(employees.isnull().sum()) # no NaN across all columns
+
+dropped = original.dropna(subset=['salary'])
+print(dropped)
+print("Rows remaining:", len(dropped))      # 8
+print("Rows lost:", len(original) - len(dropped))   # 2
+
+# Filling is better for this dataset because:
+# - With only 10 rows, losing 2 rows (20% of data) to dropna is a significant loss.
+# - The 2 missing salary values are only 20% of the column — well within the
+#   acceptable range for mean imputation.
+# - Mean fill preserves all rows for downstream analysis.
+# - Dropping would be preferred only if the missing data is not random,
+#   or if the dataset were large enough to absorb the loss.

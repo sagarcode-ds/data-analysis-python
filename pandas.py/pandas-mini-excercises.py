@@ -36,9 +36,9 @@ print('\n')
 # d) Observation question: what values appear in the bonus and annual_salary columns
 # for the rows where salary was None? Why?
 
-employees['bonus']=employees['salary']*0.08
-employees['annual_salary']=employees['salary']*12
-employees.insert(1,'level',['Junior', 'Mid', 'Junior', 'Senior', 'Mid', 'Senior', 'Junior', 'Senior', 'Mid', 'Mid'])
+# employees['bonus']=employees['salary']*0.08
+# employees['annual_salary']=employees['salary']*12
+# employees.insert(1,'level',['Junior', 'Mid', 'Junior', 'Senior', 'Mid', 'Senior', 'Junior', 'Senior', 'Mid', 'Mid'])
 # print(employees)
 # NaN appears as pandas converts None in a numeric column to NaN (Not a Number) internally.
 
@@ -53,10 +53,10 @@ employees.insert(1,'level',['Junior', 'Mid', 'Junior', 'Senior', 'Mid', 'Senior'
 # d) Drop the 'bonus' and 'annual_salary' columns — you'll recalculate them properly
 # after handling NaN.
 
-employees.loc[employees['emp_id'] == 103, 'salary'] = 42000
-employees.loc[employees['dept']=='Finance','salary'] *= (1+0.12)
-employees.rename(columns={'experience':'years_exp'}, inplace=True)
-employees.drop(columns=['bonus','annual_salary'],inplace=True)
+# employees.loc[employees['emp_id'] == 103, 'salary'] = 42000
+# employees.loc[employees['dept']=='Finance','salary'] *= (1+0.12)
+# employees.rename(columns={'experience':'years_exp'}, inplace=True)
+# employees.drop(columns=['bonus','annual_salary'],inplace=True)
 # print(employees)
 
 
@@ -64,30 +64,30 @@ employees.drop(columns=['bonus','annual_salary'],inplace=True)
 
 # Add these duplicate rows, then clean them:
 
-extra = pd.DataFrame({
-    'emp_id':     [101, 108],
-    'name':       ['Sagar', 'George'],
-    'dept':       ['IT', 'HR'],
-    'city':       ['Butwal', 'Pokhara'],
-    'salary':     [30000, 65000],
-    'score':      [85, 89],
-    'years_exp':  [1, 7],
-    'level':      ['Junior', 'Senior']
-})
+# extra = pd.DataFrame({
+#     'emp_id':     [101, 108],
+#     'name':       ['Sagar', 'George'],
+#     'dept':       ['IT', 'HR'],
+#     'city':       ['Butwal', 'Pokhara'],
+#     'salary':     [30000, 65000],
+#     'score':      [85, 89],
+#     'years_exp':  [1, 7],
+#     'level':      ['Junior', 'Senior']
+# })
 
 # a) Concatenate extra vertically with employees (use ignore_index=True).
 # How many rows now?
 # b) Drop duplicates based on emp_id only. How many rows remain?
 # c) Try again with keep='last'. What changed compared to keep='first'?
 
-employees2=pd.concat([employees,extra],axis=0,ignore_index=True)
-print(employees2)
-print('no of rows:',len(employees2))
-employees=employees2.drop_duplicates(subset='emp_id')
-print(employees)  #  emp_id 101 and 108 are removed from last occurrence
+# employees2=pd.concat([employees,extra],axis=0,ignore_index=True)
+# print(employees2)
+# print('no of rows:',len(employees2))
+# employees=employees2.drop_duplicates(subset='emp_id')
+# print(employees)  #  emp_id 101 and 108 are removed from last occurrence
 
-employees2=employees2.drop_duplicates(subset='emp_id',keep='last')
-print(employees2)  #  emp_id 101 and 108 are removed from first occurrence
+# employees2=employees2.drop_duplicates(subset='emp_id',keep='last')
+# print(employees2)  #  emp_id 101 and 108 are removed from first occurrence
 
 
 

@@ -225,3 +225,21 @@ import pandas as pd
 # avg_salary=df['salary'].mean()
 # print(avg_salary)
 
+
+#  grouping in pandas: splitting data into groups
+
+# data={
+#     'name':['arun','barun','karun','narun','marun'],
+#     'age':[28,34,22,34,28],
+#     'salary':[50000,60000,45000,52000,48000]}
+# df=pd.DataFrame(data)
+
+# grouped=df.groupby('age')['salary'].mean()
+#  it means to categorise age groups(28,34,22) and write how much total salary these age groups earn from dataframe
+# print(grouped)
+
+
+# grouping multiple columns
+# grouped=df.groupby(['age','name'])['salary'].sum()
+# print(grouped)
+

@@ -184,3 +184,44 @@ import pandas as pd
 # print(df)
 
 
+
+# interpolate(method = linear/polynomial/time)
+# preserve data integrity
+# smooth trends
+# avoid data loss
+
+
+
+# linear interpolation
+# data={
+#     'time':[1,2,3,4,None],
+#     'value':[10,None,30,None,50]
+# }
+# df = pd.DataFrame(data)
+# df['value']=df['value'].interpolate(method='linear')
+# print(df)
+
+
+# sorting  data
+
+# sorting in one column : df.sort_values(by='column name',True/False,inplace=True)
+# data={
+#     'name':['arun','barun','karun'],
+#     'age':[10,20,5],
+#     'salary':[1000,4000,5000]}
+# df=pd.DataFrame(data)
+# df.sort_values('age',ascending=False,inplace=True)
+# print(df)
+
+
+# sorting in multiple columns
+# df.sort_values(by=['age','salary'],ascending=[True,False],inplace=True)
+# print(df)
+
+
+# aggregating data
+# df['column name].mean()/.sum()/.max() etc
+
+# avg_salary=df['salary'].mean()
+# print(avg_salary)
+

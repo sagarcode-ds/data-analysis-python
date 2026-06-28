@@ -243,3 +243,40 @@ import pandas as pd
 # grouped=df.groupby(['age','name'])['salary'].sum()
 # print(grouped)
 
+
+# merging and joining
+# pd.merge(df1,df2,on="column name",how='"type of join")
+
+# df1=pd.DataFrame({
+#     'customer ID':[1,2,3],
+#     'name':['ramesh','suresh','mahesh']})
+
+# df2=pd.DataFrame({
+#     'customer ID':[1,2,4],
+#     'order amount':[250,450,350]})
+
+# merged=pd.merge(df1,df2,on='customer ID',how='inner')
+# print(merged)
+
+# merged2=pd.merge(df1,df2,how='cross')
+# print(merged2)
+
+
+
+# concatenating dataframes : merging dataframes vertically and horizontally
+# pd.concat([df1,df2],axis=0,ignore_index=True)
+
+# df1=pd.DataFrame({
+#     'customer id':[1,2],
+#     'name':['gopal','raju']})
+
+# df2=pd.DataFrame({'customer id':[3,4],
+#                   'name':['shyam','baburao']})
+
+# vertically
+# df_concat=pd.concat([df1,df2],ignore_index=True)
+# print(df_concat)
+
+# horizontally
+# df_concat=pd.concat([df1,df2],axis=1,ignore_index=True)
+# print(df_concat)
